@@ -1,0 +1,18 @@
+{
+    "spanish": {
+      "novice": ["hola", "adiós", "por favor", "gracias", "sí", "no", "bien", "mal",
+      "amigo", "familia", "comida", "agua", "casa", "escuela", "libro",
+      "grande", "pequeño", "feliz", "triste", "qué", "cómo", "dónde", "cuándo"],
+      
+      "beginner": ["comer", "beber", "leer", "escribir", "vivir", "trabajar", "mañana",
+      "tarde", "noche", "gato", "perro", "rojo", "verde", "uno", "dos", "tres",
+      "día", "semana", "mes", "porque", "pero", "también", "con", "sin"],
+
+      "intermediate": ["necesitar", "querer", "poder", "deber", "pensar", "decidir", "viajar",
+      "conocer", "entender", "recordar", "esperar", "buscar", "cambiar", "ayudar",
+      "explicar", "preguntar", "responder", "caminar", "acostarse", "levantarse",
+      "entonces", "luego", "aunque", "antes", "después"]
+
+    }
+  }
+  
