@@ -1,7 +1,8 @@
+// ChatInterface.js
 import React, { useState } from 'react';
 import './styles.css';
 
-function ChatInterface() {
+function ChatInterface({ darkMode }) {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
   const [language, setLanguage] = useState('spanish');
@@ -14,7 +15,7 @@ function ChatInterface() {
     vocabularyMastered: 0,
   });
   const [enableFeedback, setEnableFeedback] = useState(true);
-  const [mode, setMode] = useState('conversation'); // 'conversation' or 'exercise'
+  const [mode, setMode] = useState('conversation');
 
   const updateProgress = (isCorrect) => {
     const score = isCorrect ? 100 : 50;
@@ -67,8 +68,6 @@ function ChatInterface() {
   const handleGetExercise = async () => {
     setIsLoading(true);
     try {
-      console.log(language);
-      console.log(level);
       const response = await fetch('http://localhost:8000/vocab-exercise', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -91,8 +90,8 @@ function ChatInterface() {
   };
 
   return (
-    <div className="chat-container">
-      <div className="mode-toggle">
+    <div className={`chat-container ${darkMode ? 'dark' : ''}`}>
+      <div className={`mode-toggle ${darkMode ? 'dark' : ''}`}>
         <button
           onClick={() => setMode('conversation')}
           className={mode === 'conversation' ? 'active' : ''}
@@ -107,7 +106,7 @@ function ChatInterface() {
         </button>
       </div>
 
-      <div className="controls">
+      <div className={`controls ${darkMode ? 'dark' : ''}`}>
         <select value={language} onChange={(e) => setLanguage(e.target.value)}>
           <option value="spanish">Spanish</option>
           <option value="urdu">Urdu</option>
@@ -125,9 +124,9 @@ function ChatInterface() {
         )}
       </div>
 
-      <div className="messages">
+      <div className={`messages ${darkMode ? 'dark' : ''}`}>
         {messages.map((msg, i) => (
-          <div key={i} className={`message ${msg.sender}`}>
+          <div key={i} className={`message ${msg.sender} ${darkMode ? 'dark' : ''}`}>
             {msg.sender === 'exercise' && (
               <div className="exercise-header">
                 <span className="exercise-badge">{msg.exerciseType}</span>
@@ -145,7 +144,7 @@ function ChatInterface() {
           </div>
         ))}
         {isLoading && (
-          <div className="message tutor">
+          <div className={`message tutor ${darkMode ? 'dark' : ''}`}>
             <div className="typing-indicator">
               <span></span>
               <span></span>
@@ -155,7 +154,7 @@ function ChatInterface() {
         )}
       </div>
 
-      <div className="input-area">
+      <div className={`input-area ${darkMode ? 'dark' : ''}`}>
         <input
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}

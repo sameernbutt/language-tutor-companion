@@ -410,3 +410,177 @@
   margin-top: 5px;
   display: inline-block;
 }
+
+
+
+
+
+
+
+/* FOR DARK MODE */
+
+/* DARK MODE STYLES */
+
+/* DARK MODE STYLES */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.app {
+  background-color: transparent;
+}
+
+.app.dark .header {
+  color: #ffffff;
+}
+
+.app.dark .dark-mode-toggle {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-container.dark {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+/* Rest of your existing dark mode styles... */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 20px;
+}
+
+.dark-mode-toggle {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add this to ensure proper spacing */
+.app {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Rest of your existing dark mode styles from previous answer... */
+.app.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.app.dark .header {
+  color: #ffffff;
+}
+
+.app.dark .dark-mode-toggle {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-container.dark {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.mode-toggle.dark {
+  background-color: #252525;
+  border-color: #333;
+}
+
+.mode-toggle.dark button {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.mode-toggle.dark button.active {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.controls.dark {
+  background-color: #252525;
+  border-color: #333;
+}
+
+.controls.dark select {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+.controls.dark button {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.controls.dark button:disabled {
+  background-color: #555;
+}
+
+.messages.dark {
+  background-color: #1e1e1e;
+}
+
+.message.dark.user {
+  background-color: #0d47a1;
+  color: white;
+}
+
+.message.dark.tutor {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+.message.dark.exercise {
+  background-color: #423a22;
+  border-left-color: #ffc107;
+  color: #e0e0e0;
+}
+
+.exercise-instructions.dark {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: #e0e0e0;
+}
+
+.input-area.dark {
+  background-color: #252525;
+  border-color: #333;
+}
+
+.input-area.dark input {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+.input-area.dark button {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.input-area.dark button:disabled {
+  background-color: #555;
+}
+
+.score-badge.dark {
+  background-color: #2e7d32;
+}
+
+.exercise-badge.dark {
+  background-color: #555;
+}
