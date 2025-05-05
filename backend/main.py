@@ -25,7 +25,7 @@ class Message(BaseModel):
     is_exercise: bool = False
     enable_feedback: bool = False  # Default OFF for conversation mode
     context: List[str] = []  # Track conversation history
-    target_answers: Optional[List[str]] = []  # NEW!
+    target_answers: Optional[List[str]] = [] 
 class ExerciseSubmission(BaseModel):
     user_answer: str
     exercise_type: str
@@ -57,13 +57,13 @@ def load_vocab(language: str, level: str) -> List[str]:
         print(f"Error loading vocab: {e}")
         return []
 
-practiced_mc = []  # Make sure this list exists
+practiced_mc = [] 
 
+# flags true if somethings wrong, otherwise false
 def check_mc(given_parts, correct_word):
-    # Extract the target (e.g., ["B"] or ["B)"])
-    target_str = given_parts["target"][0]  # Take first element (e.g., "B)")
+    target_str = given_parts["target"][0]  # Take first element 
     print("target str is " + str(target_str))
-    target_letter = target_str.rstrip(')')  # Remove ")" if present (e.g., "B")
+    target_letter = target_str.rstrip(')')  # Remove ")" if present
     print("Target letter is " + str(target_letter))
 
     input_string = given_parts["content"]
@@ -88,7 +88,7 @@ def check_mc(given_parts, correct_word):
     elif not found_word == correct_word:
         return True # word doesnt match correct answer
     else:
-        practiced_mc.append(found_word)
+        practiced_mc.append(found_word) # if we good then just keep track of it
         return False
 
 def get_cefr(level):
@@ -122,10 +122,10 @@ def generate_tutor_response(system_prompt: str, user_text: str, language: str,
     cefr = get_cefr(level)
     
     prompt = f"""
-        You are a friendly Spanish tutor helping a student practice casual conversation.
-        This is a continuous chat. Do NOT repeat greetings like "Hola" every time. 
+        You are a friendly {language} tutor helping a student practice casual conversation.
+        This is a continuous chat. Do NOT repeat greetings every time. 
         Instead, build naturally on the previous messages. Ask follow-up questions.
-        Use informal Spanish and sound like a native speaker.
+        Use informal {language} and sound like a native speaker.
 
         The user is {level} level. Respond accordingly.'
 
@@ -153,7 +153,7 @@ def generate_tutor_response(system_prompt: str, user_text: str, language: str,
             f"{', '.join(vocab_limit)}\n"
             "Make sure the response is understandable and natural with these words."
         )
-
+    print(prompt)
     try:
         response = requests.post(
             OLLAMA_URL,
