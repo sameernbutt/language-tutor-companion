@@ -110,6 +110,13 @@ function ChatInterface({ darkMode }) {
         <select value={language} onChange={(e) => setLanguage(e.target.value)}>
           <option value="spanish">Spanish</option>
           <option value="urdu">Urdu</option>
+          <option value="italian">Italian</option>
+          <option value="french">French</option>
+          <option value="finnish">Finnish</option>
+          <option value="german">German</option>
+          <option value="swahili">Swahili</option>
+          <option value="indonesian">Indonesian</option>
+          <option value="icelandic">Icelandic</option>
         </select>
         <select value={level} onChange={(e) => setLevel(e.target.value)}>
           <option value="novice">Novice</option>
