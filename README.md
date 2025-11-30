@@ -4,11 +4,11 @@ An interactive AI-powered language learning application that helps users practic
 
 ## Features ✨
 
-- **Conversation Mode**: Practice natural conversations with an AI tutor
+- **Conversation Mode**: Practice natural conversations with an AI tutor (now with "Start Conversation" button)
 - **Exercise Mode**: Vocabulary exercises including translations, multiple choice, and conjugation
 - **Multi-Language Support**: Spanish, Urdu, Italian, French, Finnish, German, Swahili, Indonesian, and Icelandic
 - **Proficiency Levels**: Novice, Beginner, Intermediate, and Advanced
-- **Dark Mode**: Easy on the eyes during late-night study sessions
+- **Modern UI**: Clean, responsive interface with dark mode support, auto-scrolling, and auto-focus
 - **CEFR-Aligned**: Vocabulary and responses aligned with CEFR proficiency levels
 
 ## Tech Stack 🛠️
@@ -16,11 +16,11 @@ An interactive AI-powered language learning application that helps users practic
 ### Frontend
 - React 18
 - Axios for API calls
-- CSS for styling
+- CSS (Modernized with variables and flexbox)
 
 ### Backend
 - FastAPI (Python)
-- Groq API (Mixtral-8x7B model - free tier)
+- Groq API (Llama 3.1 8B Instant model - free tier)
 - CORS enabled for cross-origin requests
 
 ## Project Structure 📁
@@ -208,7 +208,6 @@ The backend needs to be deployed to a platform that supports Python/FastAPI. **N
 - [ ] Expand vocabulary data for all languages
 - [ ] Add speech-to-text and text-to-speech
 - [ ] Add progress tracking dashboard
-- [ ] Mobile responsive improvements
 
 ## Contributing 🤝
 

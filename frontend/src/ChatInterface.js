@@ -1,5 +1,5 @@
 // ChatInterface.js
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './styles.css';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
@@ -18,6 +18,23 @@ function ChatInterface({ darkMode }) {
   });
   const [enableFeedback, setEnableFeedback] = useState(true);
   const [mode, setMode] = useState('conversation');
+  const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isLoading]);
+
+  // Auto-focus input when loading finishes
+  useEffect(() => {
+    if (!isLoading) {
+      inputRef.current?.focus();
+    }
+  }, [isLoading]);
 
   const updateProgress = (isCorrect) => {
     const score = isCorrect ? 100 : 50;
@@ -190,10 +207,12 @@ function ChatInterface({ darkMode }) {
             </div>
           </div>
         )}
+        <div ref={messagesEndRef} />
       </div>
 
       <div className={`input-area ${darkMode ? 'dark' : ''}`}>
         <input
+          ref={inputRef}
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && handleSend()}
@@ -203,6 +222,7 @@ function ChatInterface({ darkMode }) {
               : "Type a message..."
           }
           disabled={isLoading}
+          autoFocus
         />
         <button onClick={handleSend} disabled={isLoading || !inputText.trim()}>
           {mode === 'exercise' && activeExercise ? "Submit" : "Send"}
