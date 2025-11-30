@@ -1,18 +1,56 @@
 {
-    "spanish": {
-      "novice": ["hola", "adiós", "por favor", "gracias", "sí", "no", "bien", "mal",
+  "spanish": {
+    "novice": [
+      "hola", "adiós", "por favor", "gracias", "sí", "no", "bien", "mal",
       "amigo", "familia", "comida", "agua", "casa", "escuela", "libro",
-      "grande", "pequeño", "feliz", "triste", "qué", "cómo", "dónde", "cuándo"],
+      "grande", "pequeño", "feliz", "triste", "qué", "cómo", "dónde", "cuándo",
       
-      "beginner": ["comer", "beber", "leer", "escribir", "vivir", "trabajar", "mañana",
-      "tarde", "noche", "gato", "perro", "rojo", "verde", "uno", "dos", "tres",
-      "día", "semana", "mes", "porque", "pero", "también", "con", "sin"],
+      "mujer", "hombre", "niño", "niña", "calle", "tienda", "ciudad", "país",
+      "día", "noche", "mañana", "hoy", "ayer",  "uno", "dos", "tres",
+      "mucho", "poco", "frío", "calor", "ropa", "mesa", "silla", "puerta",
+      
+      "ventana", "carro", "autobús", "tren", "dinero", "comida", "fruta",
+      "verdura", "pan", "leche", "café", "té", "hermano", "hermana",
+      "mamá", "papá", "abuelo", "abuela", "trabajo", "tiempo", "juego",
+      "color", "camino", "playa", "montaña"
+    ],
 
-      "intermediate": ["necesitar", "querer", "poder", "deber", "pensar", "decidir", "viajar",
+    "beginner": [
+      "comer", "beber", "leer", "escribir", "vivir", "trabajar", "mañana",
+      "tarde", "noche", "gato", "perro", "rojo", "verde", "bailar", "cantar",
+      "jugar", "estudiar", "escuchar", "mirar", "familia", "amigos", "ciudad",
+      "día", "semana", "mes", "porque", "pero", "también", "con", "sin",
+      
+      "caminar", "correr", "abrir", "cerrar", "escuchar", "hablar", "pensar",
+      "ver", "poner", "comprar", "vender", "blanco", "negro", "azul", "amarillo",
+      "cuatro", "cinco", "seis", "siempre", "nunca", "a veces", "sobre", "entre",
+      
+      "llegar", "salir", "venir", "entrar", "viajar", "cocinar", "aprender",
+      "enseñar", "preguntar", "contestar", "sentir", "llamar", "estar",
+      "tener", "ir", "hacer", "decir", "querido", "fácil", "difícil",
+      "rápido", "lento", "caro", "barato", "nuevo", "viejo", "limpio", "sucio",
+      "calle", "parque", "restaurante", "hotel", "baño", "puente"
+    ],
+
+    "intermediate": [
+      "necesitar", "querer", "poder", "deber", "pensar", "decidir", "viajar",
       "conocer", "entender", "recordar", "esperar", "buscar", "cambiar", "ayudar",
       "explicar", "preguntar", "responder", "caminar", "acostarse", "levantarse",
-      "entonces", "luego", "aunque", "antes", "después"]
-
-    }
+      "entonces", "luego", "aunque", "antes", "después",
+      
+      "sugerir", "recomendar", "probar", "mejorar", "mantener", "desarrollar",
+      "lograr", "organizar", "preparar", "descubrir", "imaginar", "aceptar",
+      "rechazar", "olvidar", "discutir", "intentar", "crecer", "describir",
+      "mientras", "sin embargo", "por lo tanto", "además", "casi", "apenas",
+      
+      "arriesgar", "negociar", "analizar", "comportarse", "confiar", "depender",
+      "apoyar", "superar", "construir", "romper", "unir", "resolver",
+      "analizar", "gestionar", "revisar", "interpretar", "sospechar", "cometer",
+      "lograr", "perder", "ganar", "rechazar", "admitir", "negar",
+      
+      "a pesar de", "por eso", "por consiguiente", "en cambio", "por otro lado",
+      "en realidad", "en general", "de hecho", "por cierto", "de vez en cuando",
+      "finalmente", "al principio", "al final"
+    ]
   }
-  
+}
