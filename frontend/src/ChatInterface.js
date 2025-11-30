@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import './styles.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+
 function ChatInterface({ darkMode }) {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
@@ -45,7 +47,7 @@ function ChatInterface({ darkMode }) {
     };
 
     try {
-      const response = await fetch('http://localhost:8000/chat', {
+      const response = await fetch(`${API_BASE_URL}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -65,10 +67,34 @@ function ChatInterface({ darkMode }) {
     }
   };
 
+  const handleStartConversation = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${API_BASE_URL}/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          text: '',
+          language,
+          level,
+          is_exercise: false,
+          enable_feedback: false,
+          start_conversation: true
+        })
+      });
+      const data = await response.json();
+      setMessages(prev => [...prev, { text: data.response, sender: 'tutor' }]);
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const handleGetExercise = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/vocab-exercise', {
+      const response = await fetch(`${API_BASE_URL}/vocab-exercise`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ language, level })
@@ -124,6 +150,11 @@ function ChatInterface({ darkMode }) {
           <option value="intermediate">Intermediate</option>
           <option value="advanced">Advanced</option>
         </select>
+        {mode === 'conversation' && (
+          <button onClick={handleStartConversation} disabled={isLoading}>
+            Start Conversation
+          </button>
+        )}
         {mode === 'exercise' && (
           <button onClick={handleGetExercise} disabled={isLoading || activeExercise}>
             Get Exercise
