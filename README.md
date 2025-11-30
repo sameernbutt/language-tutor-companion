@@ -2,6 +2,8 @@
 
 An interactive AI-powered language learning application that helps users practice conversations and vocabulary exercises in multiple languages using Mistral 7B.
 
+<https://ai-language-tutor-companion.netlify.app/>
+
 ## Features ✨
 
 - **Conversation Mode**: Practice natural conversations with an AI tutor (now with "Start Conversation" button)
@@ -113,52 +115,7 @@ The application will be available at `http://localhost:3000`
 
 ## Deployment 🌐
 
-### Backend Deployment (Recommended: Render, Railway, or Heroku)
-
-The backend needs to be deployed to a platform that supports Python/FastAPI. **Note: Netlify does not support Python backends.**
-
-#### Option 1: Render (Recommended - Free Tier Available)
-
-1. Create account at [render.com](https://render.com)
-2. Create a new **Web Service**
-3. Connect your GitHub repository
-4. Configure:
-   - **Root Directory**: `backend`
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-5. Add environment variable: `GROQ_API_KEY`
-6. Deploy!
-
-#### Option 2: Railway
-
-1. Create account at [railway.app](https://railway.app)
-2. Create new project from GitHub repo
-3. Set root directory to `backend`
-4. Add `GROQ_API_KEY` environment variable
-5. Railway auto-detects Python and deploys
-
-#### Option 3: Heroku
-
-1. Create `Procfile` in backend folder:
-   ```
-   web: uvicorn main:app --host 0.0.0.0 --port $PORT
-   ```
-2. Deploy via Heroku CLI or GitHub integration
-
-### Frontend Deployment (Netlify)
-
-1. Create account at [netlify.com](https://netlify.com)
-2. Click "New site from Git"
-3. Connect your GitHub repository
-4. Configure build settings:
-   - **Base directory**: `frontend`
-   - **Build command**: `npm run build`
-   - **Publish directory**: `frontend/build`
-5. Add environment variable:
-   - `REACT_APP_API_URL` = Your deployed backend URL (e.g., `https://your-backend.onrender.com`)
-6. Deploy!
-
-**Important**: Make sure to update `REACT_APP_API_URL` in Netlify's environment variables to point to your deployed backend URL.
+This project is deployed on netlify. Link: <https://ai-language-tutor-companion.netlify.app/>
 
 ## Environment Variables 🔐
 
