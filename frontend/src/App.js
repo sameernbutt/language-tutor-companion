@@ -18,11 +18,11 @@ function App() {
     <div className="app">
       <div className="header">
         <h1>AI Language Tutor & Companion</h1>
-        <button 
+        <button
           className="dark-mode-toggle"
           onClick={() => setDarkMode(!darkMode)}
         >
-          {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
         </button>
       </div>
       <ChatInterface darkMode={darkMode} />
