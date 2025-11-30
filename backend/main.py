@@ -120,10 +120,26 @@ def generate_tutor_response(system_prompt: str, user_text: str, language: str,
     ]) if context else ""
 
     cefr = get_cefr(level)
+
+    # get greeting to make sure model doesnt say the same thing or greeting over and over again
+    greetings = {
+    "spanish": "hola",
+    "urdu": "salaam",
+    "french": "bonjour",
+    "finnish": "hei",
+    "italian": "ciao",
+    "german": "hallo",
+    "indonesian": "halo",
+    "swahili": "hujambo",
+    "icelandic": "halló"
+    }
+    greeting = greetings[language.lower()]
+
+
     
     prompt = f"""
         You are a friendly {language} tutor helping a student practice casual conversation.
-        This is a continuous chat. Do NOT repeat greetings every time. 
+        This is a continuous chat. Do NOT repeat greetings like "{greeting}" every time. 
         Instead, build naturally on the previous messages. Ask follow-up questions.
         Use informal {language} and sound like a native speaker.
 
