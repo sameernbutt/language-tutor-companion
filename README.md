@@ -1,6 +1,6 @@
 # AI Language Tutor & Companion 🌍
 
-An interactive AI-powered language learning application that helps users practice conversations and vocabulary exercises in multiple languages using Mistral 7B.
+An interactive AI-powered language learning application that helps users practice conversations and vocabulary exercises in multiple languages using Llama 3.1.
 
 <https://ai-language-tutor-companion.netlify.app/>
 
